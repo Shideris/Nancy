@@ -44,5 +44,12 @@ namespace CREACIONES_NANCY
                 v0.ShowDialog();
             }
         }
+
+        private void BTNCLIENTES_Click(object sender, EventArgs e)
+        {
+            FormularioVista = new INTERMEDIOCLIENTE();
+            this.Hide();
+            FormularioVista.Show();
+        }
     }
 }

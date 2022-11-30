@@ -155,6 +155,7 @@
             this.BTNCLIENTES.Text = "CLIENTES";
             this.BTNCLIENTES.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BTNCLIENTES.UseVisualStyleBackColor = true;
+            this.BTNCLIENTES.Click += new System.EventHandler(this.BTNCLIENTES_Click);
             // 
             // BTNUSUARIOS
             // 

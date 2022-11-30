@@ -54,6 +54,12 @@
       <DependentUpon>CLIENTE.cs</DependentUpon>
     </Compile>
     <Compile Include="combobox.cs" />
+    <Compile Include="Intermedios\INTERMEDIOCLIENTE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intermedios\INTERMEDIOCLIENTE.Designer.cs">
+      <DependentUpon>INTERMEDIOCLIENTE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Intermedios\INTERMEDIOINVENTARIO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="CLIENTE\CLIENTE.resx">
       <DependentUpon>CLIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intermedios\INTERMEDIOCLIENTE.resx">
+      <DependentUpon>INTERMEDIOCLIENTE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Intermedios\INTERMEDIOINVENTARIO.resx">
       <DependentUpon>INTERMEDIOINVENTARIO.cs</DependentUpon>

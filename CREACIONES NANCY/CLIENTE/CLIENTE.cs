@@ -8,18 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 using NEGOCIO;
+using DataTable = System.Data.DataTable;
 
 namespace CREACIONES_NANCY.CLIENTE
 {
     
-    public partial class CLIENTE : Form
+    public partial class Cliente : Form
     {
         static string conexionstring = "server=localhost ; database = NANCY ; integrated security=true";
         SqlConnection conexion = new SqlConnection(conexionstring);
         CONEXIONSQLN cn = new CONEXIONSQLN();
 
-        public CLIENTE()
+        public Cliente()
         {
             InitializeComponent();
             dataGridView1.DataSource = cn.ConsultaCLI();
@@ -77,9 +79,16 @@ namespace CREACIONES_NANCY.CLIENTE
 
             if (ValidarCampos())
             {
-                MessageBox.Show("Datos Ingresados correctamente");
-                cn.InsertarCLI(TXTNOMBRES.Text, TXTAPELLIDOS.Text, TXTCI.Text);
-                dataGridView1.DataSource = cn.ConsultaCLI();
+                if (Primary())
+                {
+                    MessageBox.Show("Datos Ingresados correctamente");
+                    cn.InsertarCLI(TXTNOMBRES.Text, TXTAPELLIDOS.Text, TXTCI.Text);
+                    dataGridView1.DataSource = cn.ConsultaCLI();
+                }
+                else {
+                    MessageBox.Show("No ingrese el mismo usuario");
+                }
+                
             }
             
         }
@@ -88,6 +97,27 @@ namespace CREACIONES_NANCY.CLIENTE
         {
             cn.ModificarCLI(TXTNOMBRES.Text, TXTAPELLIDOS.Text, TXTCI.Text);
             dataGridView1.DataSource = cn.ConsultaCLI();
+        }
+
+        private bool Primary()
+        {
+            conexion.Open();
+            string query = "select count(*) from CLIENTE";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            int cont = 0;
+            cont = cmd.ExecuteNonQuery();
+            bool a = false;
+            for (int i = 0; i <= cont; i++) {
+                if (TXTCI.Text == dataGridView1.SelectedCells[i].ToString())
+                {
+                    a = false;
+                }
+                else {
+                    a = true;   
+                }
+            }
+            conexion.Close();
+            return a;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -103,7 +133,7 @@ namespace CREACIONES_NANCY.CLIENTE
             if (ValidarCampos())
             {
                 conexion.Open();
-                String consulta = "select bus.* from TELAS_VENTA as bus where NIT_O_CI = '" + TXTCI.Text + "'";
+                String consulta = "select bus.* from CLIENTE as bus where NIT_O_CI = '" + TXTCI.Text + "'";
                 SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 adaptador.Fill(dt);
@@ -180,16 +210,29 @@ namespace CREACIONES_NANCY.CLIENTE
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
                 TXTNOMBRES.Text = dataGridView1.SelectedCells[0].Value.ToString();
                 TXTAPELLIDOS.Text = dataGridView1.SelectedCells[1].Value.ToString();
                 TXTCI.Text = dataGridView1.SelectedCells[2].Value.ToString();
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show("A ocurido un error "+ex);
             }
+        }
+
+        private void BTNREFRESCAR_Click(object sender, EventArgs e)
+        {
+            String consulta = "select * from CLIENTE";
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+            dataGridView1.DataSource = dt;
+            TXTAPELLIDOS.Text = "";
+            TXTNOMBRES.Text = "";
+            TXTCI.Text = "";
         }
     }
 }

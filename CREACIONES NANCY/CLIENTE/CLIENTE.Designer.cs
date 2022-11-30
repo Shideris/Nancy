@@ -1,6 +1,6 @@
 ﻿namespace CREACIONES_NANCY.CLIENTE
 {
-    partial class CLIENTE
+    partial class Cliente
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CLIENTE));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
             this.BTNSALIR = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TXTAPELLIDOS = new System.Windows.Forms.TextBox();
@@ -206,6 +206,7 @@
             this.BTNREFRESCAR.TabIndex = 155;
             this.BTNREFRESCAR.Text = "           REFRESCAR";
             this.BTNREFRESCAR.UseVisualStyleBackColor = true;
+            this.BTNREFRESCAR.Click += new System.EventHandler(this.BTNREFRESCAR_Click);
             // 
             // BTNNUEVO
             // 
@@ -292,16 +293,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // CLIENTE
+            // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 458);
+            this.ClientSize = new System.Drawing.Size(712, 499);
             this.Controls.Add(this.BTNSALIR);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CLIENTE";
+            this.Name = "Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CLIENTE";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
