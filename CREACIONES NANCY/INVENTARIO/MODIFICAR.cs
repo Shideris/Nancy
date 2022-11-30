@@ -48,7 +48,7 @@ namespace CREACIONES_NANCY.INVENTARIO
             {
                 conexion.Open();
                 int flag = 0;
-                string cadena = "update INVENTARIO set ID_TELA='" + TXTIDTELA.Text + "', ID_MODELO='" + TXTMODELO.Text + "', CODIGO='" + TXTCODIGO.Text + "', CANTIDAD_COLORES='" + TXTCOLORES.Text + "', METROS_TOTAL='" + TXTMETROSTOTAL.Text + "', PRECIO_MAYOR='" + TXTPRECIOMAYOR.Text + "', PRECIO_MENOR='" + TXTPRECIOMENOR.Text + "', PRECIO_COMPRA='" + TXTPRECIOCOMPRA.Text + "',ID_BODEGA='" + TXTBODEGA.Text + "',ID_DISEÑO='" + TXTDISENO.Text + "' where ID_INVENTARIO='" + TXTINVEN.Text + "'";
+                string cadena = "update INVENTARIO set ID_TELA='" + TXTIDTELA.Text + "', MODELO='" + TXTMODELO.Text + "', CODIGO='" + TXTCODIGO.Text + "', CANTIDAD_COLORES='" + TXTCOLORES.Text + "', METROS_TOTAL='" + TXTMETROSTOTAL.Text + "', PRECIO_MAYOR='" + TXTPRECIOMAYOR.Text + "', PRECIO_MENOR='" + TXTPRECIOMENOR.Text + "', PRECIO_COMPRA='" + TXTPRECIOCOMPRA.Text + "',BODEGA='" + TXTBODEGA.Text + "',DISEÑO='" + TXTDISENO.Text + "' where ID_INVENTARIO='" + TXTINVEN.Text + "'";
                 SqlCommand comando = new SqlCommand(cadena, conexion);
                 flag = comando.ExecuteNonQuery();
                 if (flag == 1)
@@ -120,6 +120,7 @@ namespace CREACIONES_NANCY.INVENTARIO
         {
             try
             {
+                TXTINVEN.Text = dataGridView1.SelectedCells[0].Value.ToString();
                 TXTIDTELA.Text = dataGridView1.SelectedCells[1].Value.ToString();
                 TXTMODELO.Text = dataGridView1.SelectedCells[2].Value.ToString();
                 TXTCODIGO.Text = dataGridView1.SelectedCells[3].Value.ToString();
@@ -314,6 +315,16 @@ namespace CREACIONES_NANCY.INVENTARIO
         }
 
         private void TXTMODELO_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TXTINVEN_TextChanged(object sender, EventArgs e)
         {
 
         }

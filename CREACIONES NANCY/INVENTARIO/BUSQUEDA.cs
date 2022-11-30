@@ -82,7 +82,7 @@ namespace CREACIONES_NANCY.INVENTARIO
         {
             conexion.Open();
 
-            String consulta = "select bus.* from INVENTARIO as bus where ID_TELA = '" + TXTIDTELA.Text + "'OR MODELO = '" + TXTMODELO.Text + "' OR BODEGA= '" + TXTBODEGA.Text + "' OR DISENO = '" + TXTDISENO.Text + "'  OR CODIGO = '" + TXTCODIGO.Text + "'";
+            String consulta = "select bus.* from INVENTARIO as bus where ID_TELA = '" + TXTIDTELA.Text + "'OR MODELO = '" + TXTMODELO.Text + "' OR BODEGA= '" + TXTBODEGA.Text + "' OR DISEÑO = '" + TXTDISENO.Text + "'  OR CODIGO = '" + TXTCODIGO.Text + "'";
             SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
             DataTable dt = new DataTable();
             adaptador.Fill(dt);

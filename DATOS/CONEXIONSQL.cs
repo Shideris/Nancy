@@ -75,7 +75,7 @@ namespace DATOS
         {
             int flag = 0;
             con.Open();
-            string query = "insert into INVENTARIO values('" + ID_TELA + "','" + ID_MODELO + "','" + CODIGO + "','" + CANTIDAD_COLORES + "','" + METROS_TOTAL + "','" + PRECIO_MAYOR + "','" + PRECIO_MENOR + "','" + PRECIO_COMPRA + "','" + ID_BODEGA + "','" + DISEÑO + "')";
+            string query = "insert into INVENTARIO (ID_TELA, MODELO, CODIGO, CANTIDAD_COLORES, METROS_TOTAL, PRECIO_MAYOR, PRECIO_MENOR, PRECIO_COMPRA, BODEGA, DISEÑO)values('" + ID_TELA + "','" + ID_MODELO + "','" + CODIGO + "','" + CANTIDAD_COLORES + "','" + METROS_TOTAL + "','" + PRECIO_MAYOR + "','" + PRECIO_MENOR + "','" + PRECIO_COMPRA + "','" + ID_BODEGA + "','" + DISEÑO + "')";
             SqlCommand cmd = new SqlCommand(query, con);
             flag = cmd.ExecuteNonQuery();
             con.Close();

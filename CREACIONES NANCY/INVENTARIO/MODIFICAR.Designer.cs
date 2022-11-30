@@ -110,6 +110,7 @@
             this.TXTINVEN.Name = "TXTINVEN";
             this.TXTINVEN.Size = new System.Drawing.Size(134, 22);
             this.TXTINVEN.TabIndex = 170;
+            this.TXTINVEN.TextChanged += new System.EventHandler(this.TXTINVEN_TextChanged);
             // 
             // label8
             // 
@@ -401,6 +402,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1200, 277);
             this.dataGridView1.TabIndex = 93;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // BTNSALIR
             // 

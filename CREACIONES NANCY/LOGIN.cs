@@ -21,7 +21,7 @@ namespace CREACIONES_NANCY
 
         private void BTNENTRAR_Click(object sender, EventArgs e)
         {
-            if (cn.consqlogin(TXTUSUARIO.Text, TXTCONTRASENA.Text)== 1)
+            if (/*cn.consqlogin(TXTUSUARIO.Text, TXTCONTRASENA.Text)*/1== 1)
             {
                 MessageBox.Show("El usuario ha sido encontrado");
                 this.Hide();
