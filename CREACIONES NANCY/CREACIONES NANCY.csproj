@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DCCEB5BC-0F51-4F34-8BD1-1428467D47F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CREACIONES_NANCY</RootNamespace>
+    <AssemblyName>CREACIONES NANCY</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLIENTE\CLIENTE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLIENTE\CLIENTE.Designer.cs">
+      <DependentUpon>CLIENTE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="combobox.cs" />
+    <Compile Include="Intermedios\INTERMEDIOINVENTARIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intermedios\INTERMEDIOINVENTARIO.Designer.cs">
+      <DependentUpon>INTERMEDIOINVENTARIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Intermedios\NTERMEDIOTELAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intermedios\NTERMEDIOTELAS.Designer.cs">
+      <DependentUpon>NTERMEDIOTELAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTARIO\BUSQUEDA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTARIO\BUSQUEDA.Designer.cs">
+      <DependentUpon>BUSQUEDA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTARIO\MODIFICAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTARIO\MODIFICAR.Designer.cs">
+      <DependentUpon>MODIFICAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTARIO\NUEVO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTARIO\NUEVO.Designer.cs">
+      <DependentUpon>NUEVO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TELAS\BUSQUEDA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\BUSQUEDA.Designer.cs">
+      <DependentUpon>BUSQUEDA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TELAS\MODIFICAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\MODIFICAR.Designer.cs">
+      <DependentUpon>MODIFICAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TELAS\NUEVO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TELAS\NUEVO.Designer.cs">
+      <DependentUpon>NUEVO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIOS\USUARIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USUARIOS\USUARIO.Designer.cs">
+      <DependentUpon>USUARIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIOS\USUARIOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USUARIOS\USUARIOS.Designer.cs">
+      <DependentUpon>USUARIOS.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CLIENTE\CLIENTE.resx">
+      <DependentUpon>CLIENTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intermedios\INTERMEDIOINVENTARIO.resx">
+      <DependentUpon>INTERMEDIOINVENTARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intermedios\NTERMEDIOTELAS.resx">
+      <DependentUpon>NTERMEDIOTELAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTARIO\BUSQUEDA.resx">
+      <DependentUpon>BUSQUEDA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTARIO\MODIFICAR.resx">
+      <DependentUpon>MODIFICAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INVENTARIO\NUEVO.resx">
+      <DependentUpon>NUEVO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TELAS\BUSQUEDA.resx">
+      <DependentUpon>BUSQUEDA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TELAS\MODIFICAR.resx">
+      <DependentUpon>MODIFICAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TELAS\NUEVO.resx">
+      <DependentUpon>NUEVO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USUARIOS\USUARIO.resx">
+      <DependentUpon>USUARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USUARIOS\USUARIOS.resx">
+      <DependentUpon>USUARIOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RECURSOS\4831032_door_entrance_exit_leave_logout_icon %281%29.png" />
+    <Content Include="RECURSOS\4831032_door_entrance_exit_leave_logout_icon.png" />
+    <Content Include="RECURSOS\icons8-almacén-80.png" />
+    <Content Include="RECURSOS\icons8-apagar-80.png" />
+    <Content Include="RECURSOS\icons8-basura-50.png" />
+    <Content Include="RECURSOS\icons8-clipboard-list-64.png" />
+    <Content Include="RECURSOS\icons8-configuración-de-lady-window-100.png" />
+    <Content Include="RECURSOS\icons8-crear-nuevo-50.png" />
+    <Content Include="RECURSOS\icons8-customers-64.png" />
+    <Content Include="RECURSOS\icons8-editar-archivo-64.png" />
+    <Content Include="RECURSOS\icons8-falda-96.png" />
+    <Content Include="RECURSOS\icons8-grupo-de-usuario-96.png" />
+    <Content Include="RECURSOS\icons8-hombre-en-caja-de-producto-de-camisa-roja-100.png" />
+    <Content Include="RECURSOS\icons8-microsoft-excel-2019-50.png" />
+    <Content Include="RECURSOS\icons8-paño-80.png" />
+    <Content Include="RECURSOS\icons8-plantilla-64.png" />
+    <Content Include="RECURSOS\icons8-prototipo-80.png" />
+    <Content Include="RECURSOS\icons8-sincronizar-50.png" />
+    <Content Include="RECURSOS\icons8-tarea-completada-64.png" />
+    <Content Include="RECURSOS\icons8-temas-100.png" />
+    <Content Include="RECURSOS\icons8-ver-archivo-50.png" />
+    <Content Include="RECURSOS\icons8-ver-archivo-64.png" />
+    <Content Include="RECURSOS\icons8-verificar-100.png" />
+    <Content Include="RECURSOS\icons8-vista-nueva-100.png" />
+    <Content Include="RECURSOS\WhatsApp Image 2022-09-28 at 02.41.17 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NEGOCIO\NEGOCIO.csproj">
+      <Project>{b7c6f4a3-346d-4f69-98a8-2d94e9612e28}</Project>
+      <Name>NEGOCIO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
