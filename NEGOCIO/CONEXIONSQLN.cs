@@ -95,17 +95,17 @@ namespace NEGOCIO
             return cn.ConsultaCLI();
         }
 
-        public int InsertarCLI(string NOM_CLI, string APE_CLI, string NIT_O_CI)
+        public int InsertarCLI(string NOM_CLI, string APE_CLI, long NIT_O_CI)
         {
             return cn.InsertarCLI(NOM_CLI, APE_CLI, NIT_O_CI);
         }
 
-        public int ModificarCLI(string NOM_CLI, string APE_CLI, string NIT_O_CI)
+        public int ModificarCLI(string NOM_CLI, string APE_CLI, long NIT_O_CI)
         {
             return cn.ModificarCLI(NOM_CLI, APE_CLI, NIT_O_CI);
         }
 
-        public int EliminarCLI(string NIT_O_CI)
+        public int EliminarCLI(long NIT_O_CI)
         {
             return cn.EliminarCLI(NIT_O_CI);
         }

@@ -79,50 +79,49 @@ namespace CREACIONES_NANCY.CLIENTE
 
             if (ValidarCampos())
             {
-                if (Primary())
-                {
-                    MessageBox.Show("Datos Ingresados correctamente");
-                    cn.InsertarCLI(TXTNOMBRES.Text, TXTAPELLIDOS.Text, TXTCI.Text);
-                    dataGridView1.DataSource = cn.ConsultaCLI();
-                }
-                else {
-                    MessageBox.Show("No ingrese el mismo usuario");
-                }
-                
+                Primary();
+
             }
             
         }
 
         private void BTNMODIFICAR_Click(object sender, EventArgs e)
         {
-            cn.ModificarCLI(TXTNOMBRES.Text, TXTAPELLIDOS.Text, TXTCI.Text);
-            dataGridView1.DataSource = cn.ConsultaCLI();
+            if (valCI())
+            {
+                String cadena = TXTCI.Text;
+                long CI = long.Parse(cadena);
+                cn.ModificarCLI(TXTNOMBRES.Text, TXTAPELLIDOS.Text, CI);
+                dataGridView1.DataSource = cn.ConsultaCLI();
+            }
+            else {
+                MessageBox.Show("Ingrese un CI valido");
+            }
+            
         }
 
-        private bool Primary()
+        private void Primary()
         {
-            conexion.Open();
-            string query = "select count(*) from CLIENTE";
-            SqlCommand cmd = new SqlCommand(query, conexion);
-            int cont = 0;
-            cont = cmd.ExecuteNonQuery();
-            bool a = false;
-            for (int i = 0; i <= cont; i++) {
-                if (TXTCI.Text == dataGridView1.SelectedCells[i].ToString())
-                {
-                    a = false;
-                }
-                else {
-                    a = true;   
-                }
+            
+            try {
+                String cadena = TXTCI.Text;
+                long CI = long.Parse(cadena);
+                cn.InsertarCLI(TXTNOMBRES.Text, TXTAPELLIDOS.Text, CI);
+                CI = 0;
+                dataGridView1.DataSource = cn.ConsultaCLI();
+                //conexion.Close();
+                //cn.Close();
             }
-            conexion.Close();
-            return a;
+            catch { 
+                MessageBox.Show("Error con el CI");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cn.EliminarCLI(TXTCI.Text);
+            String cadena = TXTCI.Text;
+            long CI = long.Parse(cadena);
+            cn.EliminarCLI(CI);
             dataGridView1.DataSource = cn.ConsultaCLI();
         }
 
@@ -143,6 +142,21 @@ namespace CREACIONES_NANCY.CLIENTE
                 lector = comando.ExecuteReader();
                 conexion.Close();
             }
+        }
+
+        private bool valCI() {
+            bool valCI = false;
+            long convert = long.Parse(TXTCI.Text);
+
+            if (convert <= 99999999)
+            {
+                valCI = true;
+            }
+            else {
+                valCI = false;
+            }
+
+            return valCI;
         }
 
         private bool ValidarCampos()

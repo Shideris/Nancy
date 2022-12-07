@@ -203,7 +203,7 @@ namespace DATOS
             return tabla;
         }
         //CLIENTE
-        public int InsertarCLI(string NOM_CLI, string APE_CLI, string NIT_O_CI)
+        public int InsertarCLI(string NOM_CLI, string APE_CLI, long NIT_O_CI)
         {
             int flag = 0;
             con.Open();
@@ -214,7 +214,7 @@ namespace DATOS
             return flag;
         }
 
-        public int ModificarCLI(string NOM_CLI, string APE_CLI, string NIT_O_CI)
+        public int ModificarCLI(string NOM_CLI, string APE_CLI, long NIT_O_CI)
         {
             int flag = 0;
             con.Open();
@@ -225,7 +225,7 @@ namespace DATOS
             return flag;
         }
 
-        public int EliminarCLI(string NIT_O_CI)
+        public int EliminarCLI(long NIT_O_CI)
         {
             int flag = 0;
             con.Open();
@@ -238,12 +238,13 @@ namespace DATOS
 
         public DataTable ConsultaCLI()
         {
+            con.Open();
             string query = "select * from CLIENTE";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter data = new SqlDataAdapter(cmd);
             DataTable tabla = new DataTable();
             data.Fill(tabla);
-
+            con.Close();
             return tabla;
         }
 
